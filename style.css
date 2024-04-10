@@ -1,0 +1,124 @@
+*{padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.src{
+    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.escolher-equipes{
+    background-color: rgb(173, 173, 173);
+    width: 40%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+.escolher-equipes form{
+    background-color: rgb(54, 172, 84);
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+#NomeEquipeUm, #NomeEquipeDois{
+    padding: 10px;
+    width: 70%;
+    height: 15%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.escolher-equipes form p{
+    font-size: 130%;
+    margin: 20px 0;
+}
+#enviarNome{
+    margin: 20px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+}
+#enviarNome:hover{
+    background-color: black;
+    color: rgb(54, 172, 84);
+    transform: scale(1.1);
+}
+
+/*parte do jogo*/
+
+.escolherEquipe{
+    margin: 2%;
+    padding: 10px 20px;
+}
+
+.conteiner{
+    width: 50%;
+    height: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+
+}
+.equipes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.top{
+    background-color: white;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 130%;
+}
+.bottom{
+    background-color: aqua;
+    width: 100%;
+    height: 50%;
+}
+.respostas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+button.resp{
+    display: flex;
+    padding: 10px 20px;
+    font-size: 130%;
+    margin: 2%;
+    
+}
+.passa-repassa{
+    width: 50%;
+    height: 10%;
+    text-align: center;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+}
+.passar, .responder {
+    padding: 10px 20px;
+    margin:2%;
+}
