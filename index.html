@@ -10,42 +10,57 @@
 <body>
     <div class="src">
         <div class="escolher-equipes">
-            <form action="">
+            <form >
                 <p>escolha o nome da equipe 1</p>
-                <input  id="NomeEquipeUm" type="text" placeholder="equipe 1">
+                <input  id="nomeEquipeUm" type="text" placeholder="equipe 1">
                 <p>escolha o nome da equipe 2</p>
-                <input type="text" id="NomeEquipeDois" placeholder="esquipe 2">
+                <input type="text" id="nomeEquipeDois" placeholder="esquipe 2">
             
-                <input id="enviarNome" type="button" value="Enviar">
+                <button id="enviarNome"> Enviar</button>
             </form>
             
         </div>
 
+        <!--checar quem começa-->
+        <div class="start">
+            <button id="comecar" >Começar!</button>
+        </div>
 
 
 
 
-        <div class="conteiner">
-            <div class="equipes">
-                <h1>equipe 1 responde</h1>
-            </div>
-            <div class="top">
-                <div class="perguntas"><h1>Em que ano foi Criado o futebol</h1></div>
-            </div>
-            <div class="bottom">
-                <div class="respostas">
-                    <button class="resp">1900</button>
-                    <button class="resp ">1872</button>
-                    <button class="resp">1578</button>
-                    <button class="resp">1893</button>
+        <div class="conteiner-full">
+            <header class="pontos">
+                <h3 id="timeUm">ads</h3>
+                <h3 id="timeDois">fisio</h3>
+            </header>
+            <div class="conteiner">
+                
+                <div class="equipes">
+                    <h1 id="equipeResponde">equipe 1 responde</h1>
                 </div>
+                <div class="top">
+                    <div class="perguntas"><h1>Em que ano foi Criado o futebol</h1></div>
+                    <div class="btns">
+                        <button id="grupo1">A</button>
+                        <button id="grupo2">L</button>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="respostas">
+                        <button class="resp">1900</button>
+                        <button class="resp ">1872</button>
+                        <button class="resp">1578</button>
+                        <button class="resp">1893</button>
+                    </div>
 
+                </div>
             </div>
-        </div>
-        <div class="passa-repassa">
-            <button class="passar" id="passar">Passar</button>
-            <button class="responder" id="responder">Responder</button>
-        </div>
+            <div class="passa-repassa">
+                <button class="passar" id="passar">Passar</button>
+            </div>
+        </div><!--conteiner-full-->
+        
     </div>
 </body>
 </html>

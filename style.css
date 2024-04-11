@@ -14,6 +14,7 @@
 
 }
 .escolher-equipes{
+    
     background-color: rgb(173, 173, 173);
     width: 40%;
     height: 50%;
@@ -34,7 +35,7 @@
     align-items: center;
     border-radius: 20px;
 }
-#NomeEquipeUm, #NomeEquipeDois{
+#nomeEquipeUm, #nomeEquipeDois{
     padding: 10px;
     width: 70%;
     height: 15%;
@@ -60,7 +61,55 @@
     transform: scale(1.1);
 }
 
+/*start*/
+.start{
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.start button{
+    padding: 30px 50px;
+    font-size: 110%;
+    font-weight: bold;
+    background-color: green;
+    border: none;
+    outline: none;
+
+    border-radius: 20px;
+    transition: 0.4s;
+
+}
+.start button:hover{
+    background-color: black;
+    color: green;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px green;
+}
+
 /*parte do jogo*/
+.conteiner-full{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header.pontos{
+    height: 10%;
+    width: 100%;
+    background-color: green;
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    padding:0 10% ;
+    align-items: center;
+    font-size: 170%;
+}
 
 .escolherEquipe{
     margin: 2%;
@@ -72,6 +121,8 @@
     height: 50%;
     
     display: flex;
+    border-radius: 20px;
+    
     flex-direction: column;
     background-color: blue;
 
@@ -80,16 +131,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2%;
 
 }
 .top{
-    background-color: white;
+    background-color: rgb(218, 7, 207);
     width: 100%;
     height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 130%;
+    flex-direction: column;
+    
+}
+.perguntas{
+    height: 50%;
+    display: flex;
+    align-items: center;
 }
 .bottom{
     background-color: aqua;
@@ -117,8 +176,39 @@ button.resp{
     background-color: blueviolet;
     display: flex;
     justify-content: center;
+    
 }
 .passar, .responder {
     padding: 10px 20px;
     margin:2%;
+
 }
+
+
+/*ver com ira começar*/
+.equipes{
+    display: none;
+
+}
+.btns{
+    width: 100%;
+    padding: 2%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    justify-content: space-around;
+    
+}
+.btns button{
+    padding: 40px 80px;
+    border: none;
+    border-radius: 20px;
+    font-size: 140%;
+    font-weight: bold;
+    
+    
+}
+
+
