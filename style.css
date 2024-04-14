@@ -207,5 +207,24 @@ button.resp{
     
     
 }
+.resp{
+    border-radius: 10px;
+    border:none ;
+    
+}
+
+.correct{
+    background-color: green;
+    
+}
+.incorrect{
+    background-color: red;
+    
+}
+.resp:disabled{
+    cursor: not-allowed;
+    
+    
+}
 
 

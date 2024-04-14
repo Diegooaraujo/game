@@ -14,6 +14,43 @@ const resps = document.querySelector(".respostas")
 const btnAendB = document.querySelector(".btns")
 let indexQuestions = 0
 
+//pontos
+const pontoUm = document.querySelector("#pontuacaoUm")
+let contPontosUm = 2
+const pontoDois = document.querySelector("#pontuacaoDois")
+let contPontosDois = 0
+
+function exibirPontos(){
+    pontoUm.textContent = contPontosUm
+    pontoDois.textContent = contPontosDois
+
+}
+function pontos(){
+    
+    if(timeUm.textContent == timeUm.textContent){
+        contPontosUm +=1
+        pontoUm.textContent = contPontosUm
+        
+        
+    }else if(timeDois.textContent == timeDois.textContent){
+        contPontosDois +=1
+        pontoDois.textContent = contPontosDois
+       
+
+    }
+}
+function perdePonto(){
+    if(timeUm.textContent == timeUm.textContent){
+        contPontosUm -=1
+        pontoUm.textContent = contPontosUm
+        
+    }else if(timeDois.textContent == timeDois.textContent){
+        contPontosDois -=1
+        pontoDois.textContent = contPontosDois
+        
+
+    }
+}
 
 const equipeStart = document.querySelector("#equipeResponde")
 const secEquipeStar = document.querySelector("#secResponde")
@@ -62,8 +99,11 @@ const timeDois = document.querySelector("#timeDois")
 const mudar_nome_header = function(nomeUm,nomeDois){
     timeUm.innerText =nomeUm
     timeDois.innerText = nomeDois
+    exibirPontos()
+    
     
 }
+
 
 /*pegar os nomes e mudar tela*/
 const pegar_nome = function(){
@@ -74,21 +114,26 @@ const pegar_nome = function(){
         nome_comeca(nomeEquipeUm)
         sec_comeca(nomeEquipeDois)
         
+        
     }
     mudarTela = true
     if(mudarTela){
         escolher_equipe.style.display="none"
         start.style.display = "flex"
+        
         /*conteiner.style.display ="flex*/
         /*passa_repassa.style.display = "flex"*/
     }
 }
+
 //começar 
 const mudar_tela_perguntas = function(){
     if(mudarTela){
         conteiner.style.display ="flex"
         start.style.display= "none"
         topo.style.height ="100%"
+        
+        
 
     }
 }
@@ -96,6 +141,8 @@ comecar.addEventListener("click",(e)=>{
     mudarTela = true
     mudar_tela_perguntas()
     analise()
+    
+    
     //e.stopPropagation()
     
 })
@@ -103,10 +150,13 @@ comecar.addEventListener("click",(e)=>{
 
 //adicionar perguntas
 nextQuestion()
+
 function nextQuestion(){
+    
     while(resps.firstChild){
         resps.removeChild(resps.firstChild)
     }
+    
     perg.textContent = questions[indexQuestions].question
     questions[indexQuestions].answers.forEach(answers =>{
         const newbutton = document.createElement("button")
@@ -116,14 +166,47 @@ function nextQuestion(){
             newbutton.dataset.correct = answers.correct
         }
         resps.appendChild(newbutton)
+        newbutton.addEventListener("click",selectAnswer)
     })
+    
 }
-
+function selectAnswer(e){
+    const btnClick = e.target
+    if(btnClick.dataset.correct){
+        
+        pontos()
+        
+        document.querySelectorAll(".resp").forEach(button =>{
+            
+            if(button.dataset.correct){
+                button.classList.add("correct")
+                button.disabled = true
+            }
+            else{
+                button.classList.add("incorrect")
+                
+            }
+            
+        })
+    }else{
+        perdePonto()
+        document.querySelectorAll(".resp").forEach(button =>{
+            if(!button.dataset.correct){
+                button.classList.add("incorrect")
+                
+            }else{
+                button.classList.add("correct")
+            }
+        })
+        
+    }
+}
 
 //ver quem clicou primeiro
 
 function analise (){
         document.body.addEventListener("keyup",(e)=>{
+            passa_repassa.style.display ="flex"
     
             const chave = e.key
             e.stopPropagation()
@@ -160,6 +243,11 @@ function sec_comeca(nomeEquipeDois){
     secEquipeStar.innerText = ` ${nomeEquipeDois} responde`
     
 }
+
+//pontuação
+
+
+
 
 
 
